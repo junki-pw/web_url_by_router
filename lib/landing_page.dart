@@ -44,23 +44,25 @@ class _LandingPageState extends State<LandingPage> {
               width: size.width * 0.1,
               color: Colors.white,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: icons.map((e) {
-                  return NavItem(
-                    iconData: e,
-                    selected: icons.indexOf(e) == pages.indexOf(widget.page),
-                    onTap: () {
-                      if (icons.indexOf(e) == 1) {
-                        Navigator.pushNamed(context,
-                            '/main/${pages[icons.indexOf(e)]}/Allison');
-                      } else {
-                        Navigator.pushNamed(
-                            context, '/main/${pages[icons.indexOf(e)]}');
-                      }
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(
+                    icons.length,
+                    (index) {
+                      return NavItem(
+                        iconData: icons[index],
+                        selected: index == pages.indexOf(widget.page),
+                        onTap: () {
+                          if (index == 1) {
+                            Navigator.pushNamed(
+                                context, '/main/${pages[index]}/Allison');
+                          } else {
+                            Navigator.pushNamed(
+                                context, '/main/${pages[index]}');
+                          }
+                        },
+                      );
                     },
-                  );
-                }).toList(),
-              ),
+                  )),
             ),
             Container(
               width: size.width * 0.9,

@@ -10,9 +10,9 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    // Future.delayed(Duration(milliseconds: 1000), () {
-    //   Navigator.pushNamed(context, '/main/home');
-    // });
+    Future.delayed(Duration(milliseconds: 1000), () {
+      Navigator.pushNamed(context, '/main/home');
+    });
 
     return Scaffold(
       body: Container(
