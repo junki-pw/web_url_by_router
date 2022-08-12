@@ -12,14 +12,14 @@ class Flurorouter {
 
   static Handler _mainHandler = Handler(
       handlerFunc: (context, params) => LandingPage(
-            page: 'params[name]![0]',
-            extra: 'params[extra]![0]',
+            page: params['name']![0],
+            extra: params['extra']![0],
           ));
 
   static Handler _mainHandler2 = Handler(
       handlerFunc: (context, params) => LandingPage(
-            page: 'params[name]![0]',
-            extra: 'params[extra]![0]',
+            page: params['name']![0],
+            extra: params['extra']![0],
           ));
 
   static void setupRouter() {
