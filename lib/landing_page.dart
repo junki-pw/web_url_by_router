@@ -7,10 +7,10 @@ import 'pages/profile.dart';
 import 'pages/setting.dart';
 
 class LandingPage extends StatefulWidget {
-  const LandingPage({Key? key, required this.page, required this.extra})
+  const LandingPage({Key? key, required this.page, this.extra})
       : super(key: key);
   final String page;
-  final String extra;
+  final String? extra;
 
   @override
   State<LandingPage> createState() => _LandingPageState();
@@ -69,7 +69,7 @@ class _LandingPageState extends State<LandingPage> {
                   index: pages.indexOf(widget.page),
                   children: [
                     Home(),
-                    About(name: widget.extra),
+                    About(name: widget.extra ?? '入力不足です'),
                     Setting(),
                     Profile(),
                     Help(),
